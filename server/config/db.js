@@ -3,7 +3,11 @@ const mongoose = require('mongoose');
 let mongoMemoryServer = null;
 
 const connectDB = async () => {
-  const uri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/staffsync';
+  const uri =
+    process.env.MONGO_URI ||
+    process.env.MONGO_URL ||
+    process.env.DATABASE_URL ||
+    'mongodb://127.0.0.1:27017/staffsync';
   
   try {
     console.log(`Connecting to MongoDB at: ${uri} ...`);
