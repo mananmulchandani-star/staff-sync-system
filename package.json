@@ -4,8 +4,8 @@
   "description": "StaffSync - Modern Human Resource Management Solution",
   "scripts": {
     "start": "cd server && npm start",
-    "build": "cd client && npm install && npm run build",
-    "vercel-build": "cd client && npm install && npm run build",
+    "build": "[ -d \"client\" ] && (cd client && npm run build) || npm run build",
+    "vercel-build": "[ -d \"client\" ] && (cd client && npm run build) || npm run build",
     "server": "cd server && npm run dev",
     "server:start": "cd server && npm start",
     "client": "cd client && npm run dev",
